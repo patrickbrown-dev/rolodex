@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: discord-bot-template-deployment
-  namespace: discord-bot-template
+  name: rolodex-deployment
+  namespace: rolodex
   labels:
-    app: discord-bot-template
+    app: rolodex
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: discord-bot-template
+      app: rolodex
   template:
     metadata:
       labels:
-        app: discord-bot-template
+        app: rolodex
     spec:
       containers:
-      - name: discord-bot-template
-        image: ghcr.io/pdb64/discord-bot-template:v0.0.10
+      - name: rolodex
+        image: ghcr.io/pdb64/rolodex:v0.0.10
         env:
         - name: DISCORD_BOT_TOKEN
           valueFrom:
             secretKeyRef:
-              name: discord-bot-template-secrets
+              name: rolodex-secrets
               key: discord_bot_token
         - name: DISCORD_CLIENT_ID
           valueFrom:
             secretKeyRef:
-              name: discord-bot-template-secrets
+              name: rolodex-secrets
               key: discord_client_id
