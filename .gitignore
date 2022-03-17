@@ -1,0 +1,5 @@
+.env
+k8s/*/secrets.yml
+node_modules/
+target/
+.DS_Store
