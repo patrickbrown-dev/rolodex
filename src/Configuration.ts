@@ -17,7 +17,7 @@ export class Configuration {
         if (discordClientId === undefined) {
             throw Error("DISCORD_CLIENT_ID undefined");
         }
-        this.discordClientId = discordBotToken;
+        this.discordClientId = discordClientId;
     }
 
     public static getInstance(): Configuration {
